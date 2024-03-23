@@ -1,3 +1,6 @@
+const getItem = localStorage.getItem('token');
+const localhost = "http://localhost:3000/pub/v2";
+
 export const api = async (urlApi, method = "GET", data = null) => {
     const options = {
         credentials: "include",
@@ -5,9 +8,6 @@ export const api = async (urlApi, method = "GET", data = null) => {
             "Content-Type": "application/json",
         }
     };
-    const getItem = localStorage.getItem('token');
-    const localhost = "http://localhost:3000/pub/v2";
-    console.log(getItem);
     if (getItem) {
         options.headers.Authorization = `Bearer ${getItem}`;
     }
@@ -15,9 +15,20 @@ export const api = async (urlApi, method = "GET", data = null) => {
         options.body = JSON.stringify(data);
     }
     options.method = method;
-    console.log(JSON.stringify(options), "<datanya");
     const res = await fetch(localhost + urlApi, options);
     console.log(res);
     return await res.json();
 }
 
+export const isLogin = async () => {
+    if (getItem) {
+       const user = await api("/me");
+        if (user.role === "anggota") {
+            location.href = "./pages/pengguna/"
+        } else if (user.role === "pendidikan") {
+            location.href = "./pages/divisi/"
+        } else {
+            location.href = "./pages/pembina/"
+        }
+    }
+}

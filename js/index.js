@@ -1,5 +1,5 @@
-import { api } from "./scripts.js";
-console.log(api);
+import { api, isLogin } from "./scripts.js";
+isLogin();
 
 const form = document.querySelector("#contactForm");
 const caption = document.querySelector("#caption");
@@ -18,13 +18,11 @@ form.onsubmit = async (e) => {
         .then(async (data) => {
             if (data.success) {
                 localStorage.setItem("token", data.data);
-                if (!localStorage.getItem("token")) {
-                    location.href = "../";
-                }
                 const user = await api("/me");
                 if (user.role === "anggota") {
                     location.href = "./pages/pengguna/"
                 } else if (user.role === "pendidikan") {
+                    alert("oke")
                     location.href = "./pages/divisi/"
                 } else {
                     location.href = "./pages/pembina/"
