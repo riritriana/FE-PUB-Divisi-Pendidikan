@@ -1,5 +1,5 @@
 import { api, isLogin } from "./scripts.js";
-isLogin();
+// isLogin();
 
 const form = document.querySelector("#contactForm");
 const caption = document.querySelector("#caption");
@@ -22,13 +22,15 @@ form.onsubmit = async (e) => {
                 if (user.role === "anggota") {
                     location.href = "./pages/pengguna/"
                 } else if (user.role === "pendidikan") {
-                    alert("oke")
                     location.href = "./pages/divisi/"
                 } else {
                     location.href = "./pages/pembina/"
                 }
-
+            } else {
+                caption.style.display = "block";
+                document.querySelector("#caption-text").innerHTML = data.msg
             }
+
         })
         .catch(error => {
             console.error("Error :==>> ", error);
