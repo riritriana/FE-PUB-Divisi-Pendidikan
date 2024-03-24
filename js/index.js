@@ -1,5 +1,5 @@
 import { api, isLogin } from "./scripts.js";
-// isLogin();
+isLogin();
 
 const form = document.querySelector("#contactForm");
 const caption = document.querySelector("#caption");
