@@ -21,7 +21,6 @@ export const api = async (urlApi, method = "GET", data = null) => {
 }
 
 export const isLogin = async () => {
-    console.log(!getItem);
     if (getItem) {
         if (window.location.pathname === '/') {
             const user = await api("/me");
