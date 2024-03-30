@@ -37,7 +37,8 @@
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="pelatihan.html">Nilai Pelatihan</a></li>
                         <li class="nav-item"><a class="nav-link" href="jadwal.html">Jadwal Pelatihan</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><button id="keluar" class="nav-link"
+                                style="border: none; background: transparent;">Keluar</button></li>
                     </ul>
                 </div>
             </div>
@@ -83,8 +84,11 @@
                                 <a class="text-gradient" href="#!"><i class="bi bi-plus-square-fill"></i></a>
                             </div> -->
                         </div>
-                        <!-- Experience Card 1-->
-
+                        <div class="d-flex justify-content-end fs-3 gap-4">
+                            <button id="edit-pelatihan" class="text-gradient" title="Ubah jadwal" style="border: none;">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                        </div>
                     </section>
                     <!-- Education Section-->
 
@@ -93,6 +97,70 @@
         </div>
 
     </main>
+    <div id="caption" style="background-color: rgba(25, 48, 243, 0.16) !important;
+    position: absolute;
+    top: 0;
+    height: 127%;
+    width: 100%;
+    display: none;
+    ">
+        <div style="
+          background: wheat;
+            width: 42%;
+            height: 42%;
+            position: fixed;
+            top: 29%;
+            right: 29%;
+            display: block;
+            display: flex;
+            color: #fff;
+            background-color: rgb(255, 255, 255, 0.99);
+            color: rgba(30, 48, 243, 0.8);
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+">
+            <div style="position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 18px;
+                margin-right: 8px;
+            ">
+                <button id="silang" style="    background: transparent;
+
+                border: none;">
+                    <i class="bi bi-x-circle" style="
+                    color: #F00;"></i></button>
+            </div>
+            <div id="tambah-nilai">
+                <h2>Ubah jadwal </h2>
+                <!-- <i class="bi bi-plus-square-fill" style="
+                                                        font-size: 3rem;
+                                                        text-align: center;
+                        "></i> -->
+            </div>
+            <div style="flex-direction: column; gap: 6px;  padding: 10px;">
+                <!-- <form action=""> -->
+                    <form name="add_nilai" action=""
+                        style="width: 30rem; background-color: red; display: flex; justify-content: space-around; flex-direction: column; height: 100px;">
+                        <div style="display: flex; justify-content: space-around; gap: 4px;
+                        flex-direction: column;">
+                            <select name="" id="jenis-nilai">
+                                <option value="">-- Pilih Jenis Hari --</option>
+                                <option value="Kuis">Kuis</option>
+                                <option value="UTS">UTS</option>
+                                <option value="UAS">UAS</option>
+                            </select>
+                            <select name="" id="anggota">
+                                <option value="">-- Pilih Jam --</option>
+                            </select>
+                        </div>
+                        <button>Kirim</button>
+                    </form>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
     <!-- Footer-->
     <footer class="bg-white py-4 mt-auto">
         <div class="container px-5">

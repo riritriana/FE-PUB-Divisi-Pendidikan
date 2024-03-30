@@ -1,8 +1,7 @@
-
-const getItem = localStorage.getItem('token');
 const localhost = "http://localhost:3000/pub/v2";
 
 export const api = async (urlApi, method = "GET", data = null) => {
+    const getItem = localStorage.getItem('token');
     const options = {
         credentials: "include",
         headers: {
@@ -21,6 +20,7 @@ export const api = async (urlApi, method = "GET", data = null) => {
 }
 
 export const isLogin = async () => {
+    const getItem = localStorage.getItem('token');
     if (getItem) {
         if (window.location.pathname === '/') {
             const user = await api("/me");
@@ -34,7 +34,10 @@ export const isLogin = async () => {
         }
     } else {
         if (window.location.pathname != '/') {
+            console.log("okes");
             location.href = "../../";
+        } else {
+            console.log("okeeee")
         }
 
     }

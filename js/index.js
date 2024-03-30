@@ -19,10 +19,11 @@ form.onsubmit = async (e) => {
             if (data.success) {
                 localStorage.setItem("token", data.data);
                 const user = await api("/me");
+                console.log(user);
                 if (user.role === "anggota") {
                     location.href = "./pages/pengguna/"
                 } else if (user.role === "pendidikan") {
-                    location.href = "./pages/divisi/"
+                    window.location.href = "./pages/divisi/"
                 } else {
                     location.href = "./pages/pembina/"
                 }

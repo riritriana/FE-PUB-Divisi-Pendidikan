@@ -83,4 +83,19 @@ const getJadwal = async () => {
 
 }
 
+document.querySelector("#keluar").onclick = ()=>{
+    window.localStorage.clear(localStorage.getItem("token"));
+    isLogin();
+}
+
+
+
+document.querySelector("#edit-pelatihan").onclick = ()=> {
+    document.querySelector("#caption").style.display = "block";
+}
+
+const silang = document.querySelector("#silang");
+silang.addEventListener("click", () => {
+    caption.style.display = "none";
+});
 getJadwal();
