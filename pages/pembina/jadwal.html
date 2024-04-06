@@ -270,8 +270,9 @@
                             <!-- <div class="select-box"> -->
 
                             <div class="selected2" style="padding: 12px 24px;
-                            cursor: pointer;">
-                            <button style="border: none; background-color: transparent; color: #fff;">Tambah Pelatihan</button>
+                            cursor: pointer;" id="button-tambah">
+                                <button style="border: none; background-color: transparent; color: #fff;">Tambah
+                                    Pelatihan</button>
                             </div>
 
                             <!-- </div> -->
@@ -290,9 +291,9 @@
                             <div class="d-flex justify-content-center fs-3 gap-1">
                                 <!-- <a class="text-gradient" href="#!"><i class="bi bi-plus-square-fill"></i></a> -->
                                 <!-- <div class="d-flex justify-content-center fs-2 gap-4"> -->
-                                <a class="text-gradient" href="#!">
+                                <button class="text-gradient edit" style="border: none;" href="#!">
                                     <i class="bi bi-pencil-square"></i>
-                                </a>
+                                </button>
                                 <!-- </div> -->
                                 <!-- <div class="d-flex justify-content-center fs-2 gap-4"> -->
                                 <a class="text-gradient" href="#!">
@@ -449,7 +450,7 @@
 
                         </tbody>
                     </table>
-                
+
                 </div>
             </div>
         </div>
@@ -471,7 +472,89 @@
             </div>
         </div>
     </footer>
-    <div id="caption" style="background-color: rgba(25, 48, 243, 0.16) !important;
+
+    <!-- tambah -->
+    <div id="tambah" style="background-color: rgba(25, 48, 243, 0.16) !important;
+    position: absolute;
+    top: 0;
+    height: 127%;
+    width: 100%;
+    display: none;
+    ">
+        <div style="
+          background: wheat;
+            width: 42%;
+            height: 50%;
+            position: fixed;
+            top: 29%;
+            right: 29%;
+            display: block;
+            display: flex;
+            color: #fff;
+            background-color: rgb(255, 255, 255, 0.99);
+            color: rgba(30, 48, 243, 0.8);
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+">
+            <div style="position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 18px;
+                margin-right: 8px;
+            ">
+                <button id="silang-1" style="    background: transparent;
+
+                border: none;">
+                    <i class="bi bi-x-circle" style="
+                    color: #F00;"></i></button>
+            </div>
+            <div id="tambah-nilai">
+                <h2>Tambah Pelatihan </h2>
+                <!-- <i class="bi bi-plus-square-fill" style="
+                                                        font-size: 3rem;
+                                                        text-align: center;
+                        "></i> -->
+            </div>
+            <div style="flex-direction: column; gap: 6px;  padding: 10px; width: 100%;">
+                <!-- <form action=""> -->
+                <form name="add_nilai" action=""
+                    style="width: 100%; display: flex; justify-content: space-around; flex-direction: column; height: 100px;gap: 8px;">
+                    <div style="display: flex; justify-content: space-around; gap: 4px; 
+                        flex-direction: column;">
+
+                        <select name=""   id="jenis-nilai">
+                            <option value="" style="text-align: center; color: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);">--Categori Pelatihan --</option>
+                            <!-- <option value="Kuis">C</option>
+                            <option value="UTS">DB</option>
+                            <option value="UAS">Struktur Data</option> -->
+                        </select>
+                        <label for="">
+                            <input type="text" name="" placeholder="Nama Kelompok" id=""
+                                style="width: 100%; text-align: center;">
+                        </label>
+                        <select name="" id="anggota">
+                            <option value="" style="text-align: center;">-- Pilih Hari --</option>
+                        </select>
+                        <select name="" id="anggota">
+                            <option value="" style="text-align: center;">-- Pilih Jam --</option>
+                        </select>
+                    </div>
+                    <button style="    background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+                    border-radius: 8px;
+                    margin-bottom: 8px;
+                    color: #f5f6fa;
+                    position: relative;
+                    order: 0;
+                    border: none;">Kirim</button>
+                </form>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Ubah -->
+    <div id="edit-1" style="background-color: rgba(25, 48, 243, 0.16) !important;
     position: absolute;
     top: 0;
     height: 127%;
@@ -500,85 +583,13 @@
                 font-size: 18px;
                 margin-right: 8px;
             ">
-                <button id="silang" style="    background: transparent;
+                <button id="silang-2" style="    background: transparent;
 
                 border: none;">
                     <i class="bi bi-x-circle" style="
                     color: #F00;"></i></button>
             </div>
-            <div id="tambah-nilai">
-                <h2>Tambah Jadwal </h2>
-                <!-- <i class="bi bi-plus-square-fill" style="
-                                                        font-size: 3rem;
-                                                        text-align: center;
-                        "></i> -->
-            </div>
-            <div style="flex-direction: column; gap: 6px;  padding: 10px;">
-                <!-- <form action=""> -->
-                    <form name="add_nilai" action=""
-                        style="width: 30rem; background-color: red; display: flex; justify-content: space-around; flex-direction: column; height: 100px;">
-                        <div style="display: flex; justify-content: space-around; gap: 4px;
-                        flex-direction: column;">
-                            <select name="" id="jenis-nilai">
-                                <option value="">-- Pilih Pelatihan --</option>
-                                <option value="Kuis">Kuis</option>
-                                <option value="UTS">UTS</option>
-                                <option value="UAS">UAS</option>
-                            </select>
-                            <select name="" id="anggota">
-                                <option value="">-- Pilih Hari --</option>
-                            </select>
-                            <select name="" id="anggota">
-                                <option value="">-- Pilih Jam --</option>
-                            </select>
-                            <select name="" id="anggota">
-                                <option value="">-- Pilih Kelompok --</option>
-                            </select>
-                        </div>
-                        <button>Kirim</button>
-                    </form>
-                <!-- </form> -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Ubah -->
-    <div id="caption" style="background-color: rgba(25, 48, 243, 0.16) !important;
-    position: absolute;
-    top: 0;
-    height: 127%;
-    width: 100%;
-    /* display: none; */
-    ">
-        <div style="
-          background: wheat;
-            width: 42%;
-            height: 42%;
-            position: fixed;
-            top: 29%;
-            right: 29%;
-            display: block;
-            display: flex;
-            color: #fff;
-            background-color: rgb(255, 255, 255, 0.99);
-            color: rgba(30, 48, 243, 0.8);
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-">
-            <div style="position: absolute;
-                right: 0;
-                top: 0;
-                font-size: 18px;
-                margin-right: 8px;
-            ">
-                <button id="silang" style="    background: transparent;
-
-                border: none;">
-                    <i class="bi bi-x-circle" style="
-                    color: #F00;"></i></button>
-            </div>
-            <div id="tambah-nilai">
+            <div id="Ubah-nilai">
                 <h2>Ubah Jadwal </h2>
                 <!-- <i class="bi bi-plus-square-fill" style="
                                                         font-size: 3rem;
@@ -587,28 +598,28 @@
             </div>
             <div style="flex-direction: column; gap: 6px;  padding: 10px;">
                 <!-- <form action=""> -->
-                    <form name="add_nilai" action=""
-                        style="width: 30rem; background-color: red; display: flex; justify-content: space-around; flex-direction: column; height: 100px;">
-                        <div style="display: flex; justify-content: space-around; gap: 4px;
+                <form name="add_nilai" action=""
+                    style="width: 30rem; background-color: red; display: flex; justify-content: space-around; flex-direction: column; height: 100px;">
+                    <div style="display: flex; justify-content: space-around; gap: 4px;
                         flex-direction: column;">
-                            <select name="" id="jenis-nilai">
-                                <option value="">-- Pilih Pelatihan --</option>
-                                <option value="Kuis">Kuis</option>
-                                <option value="UTS">UTS</option>
-                                <option value="UAS">UAS</option>
-                            </select>
-                            <select name="" id="anggota">
-                                <option value="">-- Pilih Hari --</option>
-                            </select>
-                            <select name="" id="anggota">
-                                <option value="">-- Pilih Jam --</option>
-                            </select>
-                            <select name="" id="anggota">
-                                <option value="">-- Pilih Kelompok --</option>
-                            </select>
-                        </div>
-                        <button>Kirim</button>
-                    </form>
+                        <select name="" id="jenis-nilai">
+                            <option value="">-- Pilih Pelatihan --</option>
+                            <option value="Kuis">Kuis</option>
+                            <option value="UTS">UTS</option>
+                            <option value="UAS">UAS</option>
+                        </select>
+                        <select name="" id="anggota">
+                            <option value="">-- Pilih Hari --</option>
+                        </select>
+                        <select name="" id="anggota">
+                            <option value="">-- Pilih Jam --</option>
+                        </select>
+                        <select name="" id="anggota">
+                            <option value="">-- Pilih Kelompok --</option>
+                        </select>
+                    </div>
+                    <button>Kirim</button>
+                </form>
                 <!-- </form> -->
             </div>
         </div>
@@ -619,6 +630,7 @@
     <script src="js/scripts.js"></script>
 
     <script src="../../js/main.js"></script>
+    <script src="../../js/pages/pembina/jadwal.js" type="module"></script>
 </body>
 
 </html>
