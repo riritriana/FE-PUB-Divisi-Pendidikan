@@ -16,7 +16,7 @@ document.querySelector("#button-tambah").onclick = async () => {
     const hari = await api("/get-hari");
     hari.data.forEach(val => {
         const option = document.createElement("option");
-        option.value = val.id;
+        option.value = val.hari;
         option.innerHTML = val.hari;
         option.style.textAlign = "center";
         // option.style.color = "-webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%)";
@@ -25,7 +25,7 @@ document.querySelector("#button-tambah").onclick = async () => {
     const jam = await api("/get-jam");
     jam.data.forEach(val => {
         const option = document.createElement("option");
-        option.value = val.id;
+        option.value = val.jam;
         option.innerHTML = val.jam;
         option.style.textAlign = "center";
         // option.style.color = "-webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%)";
@@ -51,8 +51,10 @@ document.add_nilai.onsubmit = async (e) => {
     e.preventDefault();
     const data = await api("/add-pelatihan", "POST", {
         name: document.add_nilai.name.value,
-        id_categori_pelatihan: document.categori_pelatihan.name.value,
-        jam: document.jam.value,
-        hari: document.hari.value
+        id_categori_pelatihan: document.add_nilai.categori_pelatihan.value,
+        id_pelatihan_instruktur: document.add_nilai.instruktur.value,
+        jam: document.add_nilai.jam.value,
+        hari: document.add_nilai.hari.value
     });
+
 }
