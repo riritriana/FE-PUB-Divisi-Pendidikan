@@ -1,5 +1,5 @@
 import { api, isLogin } from "../../scripts.js";
-// isLogin();
+isLogin();
 
 document.querySelector("#button-tambah").onclick = async () => {
     document.querySelector("#tambah").style.display = "block"
@@ -56,5 +56,8 @@ document.add_nilai.onsubmit = async (e) => {
         jam: document.add_nilai.jam.value,
         hari: document.add_nilai.hari.value
     });
+    document.querySelector("#tambah").style.display = "none";
+
+    alert(data.msg);
 
 }
