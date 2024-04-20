@@ -197,7 +197,7 @@
                 <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Jadwal Pelatihan</span></h1>
             </div>
             <div class="row gx-5 justify-content-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-10">
+                <div class="col-lg-11 col-xl-9 col-xxl-10" id="table">
                     <!-- Experience Section-->
                     <section>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -607,21 +607,28 @@
                     style="width: 30rem; background-color: red; display: flex; justify-content: space-around; flex-direction: column; height: 100px;">
                     <div style="display: flex; justify-content: space-around; gap: 4px;
                         flex-direction: column;">
-                        <select name="" id="jenis-nilai">
+                        <label for=""><input type="text" value="c" name="bahasa" disabled></label>
+                        <label for=""><input type="text" value="kelompok 1" name="nama_kelompok" disabled></label>
+                       
+                        <!-- <select name="" id="anggota">
+                         option value="">-- Pilih Kelompok --</option> 
+                        </select> -->
+                        <!-- <select name="" id="jenis-nilai">
                             <option value="">-- Pilih Pelatihan --</option>
                             <option value="Kuis">Kuis</option>
                             <option value="UTS">UTS</option>
                             <option value="UAS">UAS</option>
-                        </select>
-                        <select name="" id="anggota">
+                        </select> -->
+                        <select name="" id="anggota" >
                             <option value="">-- Pilih Hari --</option>
+                            <option value="">-- Pilih Hari2 --</option>
+                            <option value="">-- Pilih Hari3 --</option>
+                            <option value="" selected>-- Pilih Hari4 --</option>
                         </select>
                         <select name="" id="anggota">
                             <option value="">-- Pilih Jam --</option>
                         </select>
-                        <select name="" id="anggota">
-                            <option value="">-- Pilih Kelompok --</option>
-                        </select>
+                      
                     </div>
                     <button>Kirim</button>
                 </form>
