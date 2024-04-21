@@ -275,7 +275,7 @@ const getJadwal = async () => {
         div.style.justifyContent = "center";
         div.style.display = 'flex';
         div.style.justifyContent = 'center';
-        div.style.height = '80%';
+        // div.style.height = '80%';
         div.style.alignItems = 'center';
         const h1 = document.createElement("h1");
         h1.textContent = "Data Pelatihan Tidak Ada"
